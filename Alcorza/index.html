@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alcorza | ERP Agéntico & Inteligencia Fiscal</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #050505;
+            --accent: #00f0ff;
+            --secondary: #7000ff;
+            --text: #ffffff;
+            --glass: rgba(255, 255, 255, 0.03);
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        /* Fondo de partículas sutil */
+        .hero-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 20% 30%, #101020 0%, #050505 100%);
+            z-index: -1;
+        }
+
+        header {
+            padding: 30px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: 600;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        .logo span { color: var(--accent); }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 5%;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 100px 0 60px;
+        }
+
+        h1 {
+            font-size: clamp(2.5rem, 7vw, 4.5rem);
+            font-weight: 200;
+            margin-bottom: 20px;
+        }
+
+        h1 b {
+            font-weight: 600;
+            background: linear-gradient(to right, var(--accent), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .tagline {
+            color: #888;
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+        }
+
+        /* Tarjeta principal */
+        .main-card {
+            background: var(--glass);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 30px;
+            padding: 50px;
+            backdrop-filter: blur(20px);
+            margin-bottom: 80px;
+        }
+
+        .cta-group {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        input {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            padding: 18px 25px;
+            border-radius: 15px;
+            color: white;
+            width: 300px;
+            font-size: 1rem;
+        }
+
+        button {
+            background: var(--accent);
+            color: black;
+            border: none;
+            padding: 18px 40px;
+            border-radius: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            box-shadow: 0 0 30px var(--accent);
+            transform: scale(1.02);
+        }
+
+        /* Grid de Innovación ERP */
+        .erp-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 50px;
+        }
+
+        .erp-item {
+            background: rgba(255,255,255,0.02);
+            border: 1px solid rgba(255,255,255,0.05);
+            padding: 30px;
+            border-radius: 20px;
+            text-align: left;
+            transition: 0.3s;
+        }
+
+        .erp-item:hover {
+            border-color: var(--secondary);
+            background: rgba(255,255,255,0.04);
+        }
+
+        .erp-item h3 {
+            color: var(--accent);
+            margin-top: 0;
+            font-weight: 600;
+        }
+
+        .badge {
+            background: rgba(0, 240, 255, 0.1);
+            color: var(--accent);
+            padding: 4px 10px;
+            border-radius: 5px;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            display: inline-block;
+        }
+
+        footer {
+            padding: 60px 0;
+            text-align: center;
+            color: #444;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="hero-bg"></div>
+    
+    <header>
+        <div class="logo">ALCOR<span>ZA</span></div>
+        <div style="color: #666; font-size: 0.8rem;">SISTEMA OPERATIVO EMPRESARIAL 2026</div>
+    </header>
+
+    <div class="container">
+        <section class="hero">
+            <h1>El fin de la <b>Administración Manual</b></h1>
+            <p class="tagline">Alcorza es la IA que gestiona tus impuestos, nómina y expedientes mientras tú haces crecer tu negocio.</p>
+            
+            <div class="main-card">
+                <div class="cta-group">
+                    <input type="email" placeholder="Correo de tu empresa...">
+                    <button onclick="alert('Tu lugar en el futuro está reservado. Pronto recibirás noticias.')">Solicitar Demo Beta</button>
+                </div>
+                <p style="margin-top: 20px; font-size: 0.8rem; color: #555;">Únete a más de 100 empresas en lista de espera.</p>
+            </div>
+
+            <h2 style="font-weight: 200; margin-bottom: 40px;">Innovación ERP 360°</h2>
+            
+            <div class="erp-grid">
+                <div class="erp-item">
+                    <span class="badge">Fiscal</span>
+                    <h3>Contabilidad Agéntica</h3>
+                    <p>Conciliación bancaria masiva y cálculo de impuestos en tiempo real. Sin errores humanos.</p>
+                </div>
+                <div class="erp-item">
+                    <span class="badge">Recursos Humanos</span>
+                    <h3>Nómina Autónoma</h3>
+                    <p>Cálculo de IMSS, INFONAVIT y timbrado de recibos en un click. Gestión de bajas y altas automática.</p>
+                </div>
+                <div class="erp-item">
+                    <span class="badge">Legal & Admin</span>
+                    <h3>Bóveda de Expedientes</h3>
+                    <p>Organización inteligente de documentos legales y fiscales vinculados a cada transacción.</p>
+                </div>
+                <div class="erp-item">
+                    <span class="badge">Flujo de Caja</span>
+                    <h3>Cobranza Proactiva</h3>
+                    <p>Nuestra IA detecta facturas vencidas y gestiona la cobranza por ti vía WhatsApp/Email.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        &copy; 2026 Alcorza Tecnologías. Ciudad de México.
+    </footer>
+</body>
+</html>
