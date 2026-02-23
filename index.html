@@ -23,7 +23,6 @@
             line-height: 1.6;
         }
 
-        /* Fondo de partículas sutil */
         .hero-bg {
             position: fixed;
             top: 0;
@@ -81,7 +80,6 @@
             margin-bottom: 40px;
         }
 
-        /* Tarjeta principal */
         .main-card {
             background: var(--glass);
             border: 1px solid rgba(255,255,255,0.1);
@@ -89,9 +87,11 @@
             padding: 50px;
             backdrop-filter: blur(20px);
             margin-bottom: 80px;
+            box-shadow: 0 0 50px rgba(0, 240, 255, 0.05);
         }
 
-        .cta-group {
+        /* Formulario Estilizado */
+        .cta-form {
             display: flex;
             gap: 15px;
             justify-content: center;
@@ -106,6 +106,13 @@
             color: white;
             width: 300px;
             font-size: 1rem;
+            transition: 0.3s;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: var(--accent);
+            background: rgba(255,255,255,0.08);
         }
 
         button {
@@ -121,10 +128,9 @@
 
         button:hover {
             box-shadow: 0 0 30px var(--accent);
-            transform: scale(1.02);
+            transform: translateY(-2px);
         }
 
-        /* Grid de Innovación ERP */
         .erp-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -138,18 +144,6 @@
             padding: 30px;
             border-radius: 20px;
             text-align: left;
-            transition: 0.3s;
-        }
-
-        .erp-item:hover {
-            border-color: var(--secondary);
-            background: rgba(255,255,255,0.04);
-        }
-
-        .erp-item h3 {
-            color: var(--accent);
-            margin-top: 0;
-            font-weight: 600;
         }
 
         .badge {
@@ -182,14 +176,18 @@
     <div class="container">
         <section class="hero">
             <h1>El fin de la <b>Administración Manual</b></h1>
-            <p class="tagline">Alcorza es la IA que gestiona tus impuestos, nómina y expedientes mientras tú haces crecer tu negocio.</p>
+            <p class="tagline">Alcorza gestiona tus impuestos, nómina y expedientes mientras tú haces crecer tu negocio.</p>
             
             <div class="main-card">
-                <div class="cta-group">
-                    <input type="email" placeholder="Correo de tu empresa...">
-                    <button onclick="alert('Tu lugar en el futuro está reservado. Pronto recibirás noticias.')">Solicitar Demo Beta</button>
-                </div>
-                <p style="margin-top: 20px; font-size: 0.8rem; color: #555;">Únete a más de 100 empresas en lista de espera.</p>
+                <h3>Únete a la lista de espera exclusiva</h3>
+                <p style="color: #888; font-size: 0.9rem; margin-bottom: 25px;">Sé de los primeros en experimentar el ERP del futuro.</p>
+                
+                <form action="https://formspree.io/f/mjgepvoz" method="POST" class="cta-form">
+                    <input type="email" name="email" placeholder="Tu correo electrónico..." required>
+                    <button type="submit">Solicitar Acceso Beta</button>
+                </form>
+                
+                <p style="margin-top: 20px; font-size: 0.8rem; color: #555;">No compartiremos tus datos. Solo recibirás el acceso cuando estemos listos.</p>
             </div>
 
             <h2 style="font-weight: 200; margin-bottom: 40px;">Innovación ERP 360°</h2>
@@ -198,22 +196,17 @@
                 <div class="erp-item">
                     <span class="badge">Fiscal</span>
                     <h3>Contabilidad Agéntica</h3>
-                    <p>Conciliación bancaria masiva y cálculo de impuestos en tiempo real. Sin errores humanos.</p>
+                    <p>Conciliación bancaria y cálculo de impuestos en tiempo real. Sin errores humanos.</p>
                 </div>
                 <div class="erp-item">
                     <span class="badge">Recursos Humanos</span>
                     <h3>Nómina Autónoma</h3>
-                    <p>Cálculo de IMSS, INFONAVIT y timbrado de recibos en un click. Gestión de bajas y altas automática.</p>
+                    <p>Cálculo de IMSS y timbrado de recibos en un click. Gestión de bajas y altas automática.</p>
                 </div>
                 <div class="erp-item">
                     <span class="badge">Legal & Admin</span>
                     <h3>Bóveda de Expedientes</h3>
-                    <p>Organización inteligente de documentos legales y fiscales vinculados a cada transacción.</p>
-                </div>
-                <div class="erp-item">
-                    <span class="badge">Flujo de Caja</span>
-                    <h3>Cobranza Proactiva</h3>
-                    <p>Nuestra IA detecta facturas vencidas y gestiona la cobranza por ti vía WhatsApp/Email.</p>
+                    <p>Organización inteligente de documentos legales vinculados a cada transacción.</p>
                 </div>
             </div>
         </section>
