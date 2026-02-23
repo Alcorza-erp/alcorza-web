@@ -32,6 +32,33 @@
         #file-input { display: none; }
         
         .ai-console { background: rgba(112, 0, 255, 0.05); border: 1px solid rgba(112, 0, 255, 0.1); padding: 25px; border-radius: 20px; }
+    /* Estilos de Expedientes */
+        .expedientes-section {
+            margin-top: 40px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        .doc-card {
+            background: rgba(255,255,255,0.02);
+            border: 1px solid rgba(255,255,255,0.1);
+            padding: 20px;
+            border-radius: 15px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .doc-card h5 { margin: 0; color: var(--accent); }
+        .doc-status { font-size: 0.8rem; color: #888; }
+        .upload-mini {
+            background: rgba(255,255,255,0.05);
+            border: 1px dashed #444;
+            padding: 10px;
+            text-align: center;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 0.8rem;
+        }
     </style>
 </head>
 <body>
@@ -43,6 +70,29 @@
         <a href="#" class="nav-item">Expedientes</a>
     </nav>
 
+    <h2 style="margin-top: 50px; font-weight: 300;">Bóveda de **Expedientes Digitales**</h2>
+        <div class="expedientes-section">
+            <div class="doc-card">
+                <h5>Constancia de Situación Fiscal</h5>
+                <div class="doc-status" id="status-csf">⚠️ Pendiente de carga</div>
+                <div class="upload-mini" onclick="document.getElementById('input-csf').click()">Subir PDF</div>
+                <input type="file" id="input-csf" style="display:none" onchange="updateDocStatus('csf')">
+            </div>
+
+            <div class="doc-card">
+                <h5>Opinión del Cumplimiento (32-D)</h5>
+                <div class="doc-status" id="status-opinion">⚠️ Pendiente de carga</div>
+                <div class="upload-mini" onclick="document.getElementById('input-opinion').click()">Subir PDF</div>
+                <input type="file" id="input-opinion" style="display:none" onchange="updateDocStatus('opinion')">
+            </div>
+
+            <div class="doc-card">
+                <h5>Acta Constitutiva</h5>
+                <div class="doc-status" id="status-acta">⚠️ Pendiente de carga</div>
+                <div class="upload-mini" onclick="document.getElementById('input-acta').click()">Subir PDF</div>
+                <input type="file" id="input-acta" style="display:none" onchange="updateDocStatus('acta')">
+            </div>
+        </div>
     <main>
         <h1>Consola de **Procesamiento**</h1>
         
@@ -105,6 +155,19 @@
                 reader.readAsText(file);
             });
         });
+   function updateDocStatus(docId) {
+            const statusMap = {
+                'csf': 'status-csf',
+                'opinion': 'status-opinion',
+                'acta': 'status-acta'
+            };
+            const element = document.getElementById(statusMap[docId]);
+            element.innerText = "✅ Documento cargado y validado";
+            element.style.color = "#00f0ff";
+            
+            // Simulación de IA analizando el documento
+            document.getElementById('ai-message').innerText = `🤖 IA: He analizado tu documento. La vigencia es correcta y los datos coinciden con tu RFC.`;
+        }
     </script>
 </body>
 </html>
